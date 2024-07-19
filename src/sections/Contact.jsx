@@ -12,7 +12,7 @@ const Contact = () => {
       <section id="Contact" name="Contact Us" className="py-5">
         <div className="container">
           <div className="justify-content-center">
-            <h4 className='mb-4'>I'd love to here from you</h4>
+            <h4 className='mb-4 text-center text-md-start'>I'd love to here from you</h4>
               <ContactForm onSubmit={handleFormSubmit} />           
           </div>
         </div>

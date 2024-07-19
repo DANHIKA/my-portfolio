@@ -8,7 +8,6 @@ const ContactForm = ({ onSubmit }) => {
     email: '',
     message: '',
     phone: '',
-    services: [], // Assuming services are checkboxes
   });
 
   const [wordCount, setWordCount] = useState(0);
@@ -124,7 +123,7 @@ const ContactForm = ({ onSubmit }) => {
         <div className="form-text">{wordCount}/300 words</div>
       </div>
 
-      <button type="submit" className="btn align-items-center">
+      <button type="submit" className="btn d-flex align-items-center">
         Submit <span className="material-icons ms-2">arrow_forward</span>
       </button>
     </form>

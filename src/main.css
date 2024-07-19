@@ -28,3 +28,8 @@
 .content:hover, .content:focus{
     border: var(--bs-card-border-width) solid var(--bs-card-border-color) !important;
 }
+
+.fa-github{
+  color: var(--bs-body-color);
+
+}
