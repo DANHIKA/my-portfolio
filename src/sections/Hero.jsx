@@ -14,13 +14,13 @@ const Hero = () => {
         </div>
         <div className='col-md-4 col-12 d-flex align-items-end justify-content-end'>
           <div className="social-icons mt-3">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-decoration-none mx-2">
+            <a href="https://web.facebook.com/hika.ntandiks/" target="_blank" rel="noopener noreferrer" className="text-decoration-none mx-2">
               <i className="fab fa-facebook"></i>
             </a>
             <a href="https://github.com/DANHIKA/" target="_blank" rel="noopener noreferrer" className="text-decoration-none mx-2">
               <i className="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-decoration-none mx-2">
+            <a href="https://www.linkedin.com/in/hika-ntandika-34961b28a/" target="_blank" rel="noopener noreferrer" className="text-decoration-none mx-2">
               <i className="fab fa-linkedin"></i>
             </a>
           </div>
