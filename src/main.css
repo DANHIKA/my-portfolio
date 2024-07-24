@@ -1,37 +1,27 @@
 :root {
-    --bs-font-sans-serif: "Roboto", sans-serif;
+  --bs-font-sans-serif: "Roboto", sans-serif;
 }
 
 :root[data-bs-theme="light"] {
-    --bs-body-bg: #ffffff;
-    --bs-body-color: #262626;
-    --bs-content-bg:  #f1f1f1;
-    --bs-link-color: #707070;
-    --bs-active-link-bg:#EDEDED ;
-    --bs-active-link-color:#212121 ;
-  }
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #262626;
+  --bs-content-bg:  #f1f1f1;
+  --bs-link-color: #707070;
+  --bs-active-link-bg:#EDEDED ;
+  --bs-active-link-color:#212121 ;
+}
   
-  :root[data-bs-theme="dark"] {
-    --bs-body-bg:#212121;
-    --bs-body-color: #fff;
-    --bs-content-bg:#262626 ;
-    --bs-link-color: #a8a8a8;
-    --bs-active-link-bg:#303030 ;
-    --bs-active-link-color:#FFFFFF ;
-  }
-/* Add this CSS to your stylesheet */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg:#212121;
+  --bs-body-color: #fff;
+  --bs-content-bg:#262626 ;
+  --bs-link-color: #a8a8a8;
+  --bs-active-link-bg:#303030 ;
+  --bs-active-link-color:#FFFFFF ;
+}
 
 header {
   padding: 1rem 0;
-}
-
-.navbar-toggler {
-  border: none;
-}
-
-.navbar-toggler:focus {
-  outline: none;
-  box-shadow: none;
 }
 
 .theme-toggler-wrapper {
@@ -40,47 +30,28 @@ header {
   align-items: center;
 }
 
-@media (max-width: 992px) {
-  .navbar-nav {
-    text-align: center;
-  }
-
-  .navbar-collapse {
-    background-color: #fff;
-    padding: 1rem;
-  }
-
-  .theme-toggler-wrapper {
-    margin-top: 1rem;
-  }
+.navbar-toggler {
+  font-size: 2rem;
+  border: none;
+  background: none;
 }
-/* Add this CSS to your stylesheet */
 
-@media (max-width: 768px) {
-  .collapsed-nav {
-    position: fixed;
-    top: 80px; /* Adjust if your header height is different */
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1000;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05); /* Slightly transparent background */
-    backdrop-filter: blur(10px); /* Blurry background effect */
-  }
-
-  .collapsed-nav.show {
-    display: flex;
-  }
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-links.show {
+  display: flex;
 }
 
 .nav-item {
@@ -90,6 +61,41 @@ header {
 .nav-link {
   font-size: 1.25rem;
   text-decoration: none;
+}
+
+/* Ensure the nav-links are hidden on larger screens */
+@media (min-width: 769px) {
+  .collapsed-nav {
+    display: none;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row; /* Ensure nav links are in a row */
+  }
+}
+
+/* Styles for small screens */
+@media (max-width: 768px) {
+  .collapsed-nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+  }
+
+  .collapsed-nav.show {
+    display: flex;
+  }
 }
 
 

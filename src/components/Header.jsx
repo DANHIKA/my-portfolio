@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ThemeToggler from './ThemeToggler';
 import CollapsedNavLinks from './CollapsedNavLinks';
 
@@ -8,6 +8,19 @@ const Header = () => {
   const handleToggle = () => {
     setIsNavCollapsed(!isNavCollapsed);
   };
+
+  const handleScroll = () => {
+    if (isNavCollapsed) {
+      setIsNavCollapsed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isNavCollapsed]);
 
   return (
     <header className="mb-4 text-center">
@@ -25,7 +38,7 @@ const Header = () => {
               aria-expanded={isNavCollapsed ? 'true' : 'false'}
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className={`${isNavCollapsed ? 'fa fa-times' : 'fa fa-bars'}`}></span>
             </button>
             <div className="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
               <ul className="navbar-nav">
