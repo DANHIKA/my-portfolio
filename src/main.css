@@ -19,6 +19,79 @@
     --bs-active-link-bg:#303030 ;
     --bs-active-link-color:#FFFFFF ;
   }
+/* Add this CSS to your stylesheet */
+
+header {
+  padding: 1rem 0;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.theme-toggler-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-collapse {
+    background-color: #fff;
+    padding: 1rem;
+  }
+
+  .theme-toggler-wrapper {
+    margin-top: 1rem;
+  }
+}
+/* Add this CSS to your stylesheet */
+
+@media (max-width: 768px) {
+  .collapsed-nav {
+    position: fixed;
+    top: 80px; /* Adjust if your header height is different */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05); /* Slightly transparent background */
+    backdrop-filter: blur(10px); /* Blurry background effect */
+  }
+
+  .collapsed-nav.show {
+    display: flex;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 1rem 0;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
 
 .content{
     border: 0 !important;

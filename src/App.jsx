@@ -13,9 +13,9 @@ import Experience from './sections/Experience';
 
 const App = () => {
   return (
-    <div>
+    <div className='container '>
       <Header />
-      <main className="container mt-4">
+      <main className="mt-4">
         <Hero />
         <About />
         <Education />

@@ -101,6 +101,7 @@ const Projects = () => {
   return (
     <section id="Projects" className="py-5">
       <div className="container">
+      <h2 className="fs-4 mb-4 text-center text-md-start">Projects</h2>
         <div className="row mb-3">
           <div className="col-md-10 col-12">
             <SearchBar onSearch={handleSearch} />

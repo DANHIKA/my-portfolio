@@ -20,8 +20,10 @@ const Card = ({ title, subtitle, description, date }) => {
       style={{ position: 'relative' }}
     >
       <div className="card-body d-flex align-items-center justify-content-between">
+        <div className='d-flex flex-wrap'>
         {date && <p className="card-text me-3"><small className="text-muted">{date}</small></p>}
         <h5 className="card-title me-3">{title}</h5>
+        </div>
         {subtitle && <h6 className="card-subtitle mb-2 text-muted me-3">{subtitle}</h6>}
       </div>
       {showModal && <Modal description={description} show={showModal} />}

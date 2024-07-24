@@ -3,7 +3,7 @@ import Card from '../components/Card';
 
 const educationData = [
   {
-    title: 'Bachelor of Computing and Information Systems (First Class)',
+    title: 'Bsc(Hons) of Computing in Information Systems (First Class)',
     subtitle: 'University of Greenwich',
     description: 'Graduated with a First Class degree in Computing and Information Systems. The program covered a wide range of topics including advanced software development, database management, IT infrastructure, network security, and project management. The course included hands-on experience through projects and industry collaborations.',
     date: '2023 - 2024',
