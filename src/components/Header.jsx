@@ -28,7 +28,7 @@ const Header = () => {
         <div className="logo">
           <h4 className="fw-bold">Daniel Hika</h4>
         </div>
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
             <button
               className="navbar-toggler border-0"
@@ -38,7 +38,7 @@ const Header = () => {
               aria-expanded={isNavCollapsed ? 'true' : 'false'}
               aria-label="Toggle navigation"
             >
-              <span className={`${isNavCollapsed ? 'fa fa-times' : 'fa fa-bars'}`}></span>
+              <i className={`${isNavCollapsed ? 'fa fa-times' : 'fa fa-bars'}`}></i>
             </button>
             <div className="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
               <ul className="navbar-nav">

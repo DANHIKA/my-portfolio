@@ -11,11 +11,11 @@ const TwoColumn = ({ title, detail, mediaUrl, mediaType }) => {
             <p>{detail}</p>
           </div>
         </div>
-        <div className="col-md-6">
-          <div className="media-container">
+        <div className="col-md-6 px-0">
+          <div>
             {mediaType === 'image' && (
               mediaUrl ? (
-                <img src={mediaUrl} alt="About Me" className="img-fluid w-100" style={{height: '500px'}}/>
+                <img src={mediaUrl} alt="About Me" className="img-fluid w-100" style={{height: '500px', objectFit: 'cover'}}/>
               ) : (
                 <Placeholder height="500px" width="100%" text="Image Placeholder" />
               )
