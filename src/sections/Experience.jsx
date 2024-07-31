@@ -3,17 +3,11 @@ import Card from '../components/Card';
 
 const experienceData = [
   {
-    title: 'Software Developer Intern',
-    subtitle: 'Octate Solutions',
-    description: 'Worked on various web development projects using the MERN stack. Implemented features and fixed bugs in existing applications. Collaborated with the development team to design and develop new functionalities. Gained hands-on experience with front-end technologies like React, Redux, and Bootstrap, as well as back-end technologies like Node.js, Express, and MongoDB. Participated in code reviews and contributed to improving the overall code quality and performance.',
-    date: 'June 2023 - Present',
-  },
-  {
-    title: 'IT Support Technician',
-    subtitle: 'Tech Corp',
-    description: 'Provided IT support to clients, troubleshooting hardware and software issues, and ensuring network security. Assisted in setting up and configuring computer systems, printers, and network equipment. Responded to support requests and resolved technical issues in a timely manner. Conducted regular maintenance and updates to systems to ensure optimal performance and security. Offered training and guidance to clients on best practices for using technology efficiently.',
-    date: 'June 2022 - May 2023',
-  },
+    title: 'Front End Developer Intern',
+    subtitle: 'DataRace Wire',
+    description: 'During my volunteer work at DataRace Wire as an intern Front End Developer, my main duties included coding and designing user interfaces for web applications. DataRace Wire is a tech startup focusing on creating applications for companies. I worked in cooperation with back-end developers to implement APIs and improve the user interface. My responsibilities included developing HTML, CSS, and JavaScript to build mobile-first and interactive web designs and engaging in code reviews to ensure code quality.',
+    date: '2023 | Lilongwe, Malawi',
+  }
 ];
 
 const Experience = () => {
