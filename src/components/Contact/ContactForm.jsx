@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS library
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,10 @@ const ContactForm = ({ onSubmit }) => {
   });
 
   const [wordCount, setWordCount] = useState(0);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -51,7 +57,7 @@ const ContactForm = ({ onSubmit }) => {
     <form onSubmit={handleSubmit}>
       <div className="d-flex flex-column justify-content-center">
         <div className="row my-4">
-          <div className="col-md-6 col-12 mb-4 mb-md-0">
+          <div className="col-md-6 col-12 mb-4 mb-md-0" data-aos="fade-up">
             <div className="form-floating">
               <input
                 type="text"
@@ -65,7 +71,7 @@ const ContactForm = ({ onSubmit }) => {
               <label htmlFor="firstName">First Name</label>
             </div>
           </div>
-          <div className="col-md-6 col-12">
+          <div className="col-md-6 col-12" data-aos="fade-up">
             <div className="form-floating">
               <input
                 type="text"
@@ -82,7 +88,7 @@ const ContactForm = ({ onSubmit }) => {
         </div>
       </div>
 
-      <div className="form-floating mb-3">
+      <div className="form-floating mb-3" data-aos="fade-up">
         <input
           type="email"
           className="form-control content"
@@ -95,7 +101,7 @@ const ContactForm = ({ onSubmit }) => {
         <label htmlFor="email">Email</label>
       </div>
 
-      <div className="form-floating mb-3">
+      <div className="form-floating mb-3" data-aos="fade-up">
         <input
           type="text"
           className="form-control content"
@@ -107,7 +113,7 @@ const ContactForm = ({ onSubmit }) => {
         <label htmlFor="phone">Phone (Optional)</label>
       </div>
 
-      <div className="form-floating mb-3">
+      <div className="form-floating mb-3" data-aos="fade-up">
         <textarea
           className="form-control content"
           id="message"
@@ -123,7 +129,7 @@ const ContactForm = ({ onSubmit }) => {
         <div className="form-text">{wordCount}/300 words</div>
       </div>
 
-      <button type="submit" className="btn d-flex align-items-center">
+      <button type="submit" className="btn d-flex align-items-center" data-aos="fade">
         Submit <span className="material-icons ms-2">arrow_forward</span>
       </button>
     </form>

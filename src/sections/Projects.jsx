@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 import ProjectCard from '../components/ProjectCard';
 import SearchBar from '../components/SearchBar';
 import FilterDropdown from '../components/FilterDropdown';
@@ -62,6 +64,10 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(true);
   const [selectedFilters, setSelectedFilters] = useState([]);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
+  }, []);
+
   const handleSearch = (searchTerm) => {
     const filtered = projectsData.filter((project) =>
       project.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -101,8 +107,8 @@ const Projects = () => {
   return (
     <section id="Projects" className="py-5">
       <div className="container">
-      <h2 className="fs-4 mb-4 text-center text-md-start">Projects</h2>
-        <div className="row mb-3">
+        <h2 className="fs-4 mb-4 text-center text-md-start" data-aos="fade-up">Projects</h2>
+        <div className="row mb-3" data-aos="fade-up">
           <div className="col-md-10 col-12">
             <SearchBar onSearch={handleSearch} />
           </div>
@@ -111,16 +117,18 @@ const Projects = () => {
           </div>
         </div>
         <div className="row">
-          {filteredProjects.slice(0, visibleProjects).map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              features={project.features}
-              image={project.image}
-            />
-          ))}
-        </div>
-        <div className="text-center mt-4">
+  {filteredProjects.slice(0, visibleProjects).map((project, index) => (
+    <div key={index} className="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay={`${index * 100}`}>
+      <ProjectCard
+        title={project.title}
+        features={project.features}
+        image={project.image}
+      />
+    </div>
+  ))}
+</div>
+
+        <div className="text-center mt-4" data-aos="fade-up">
           <button className="btn d-flex align-items-center" onClick={toggleProjects}>
             {showMore ? 'See more projects' : 'Show less projects'}{' '}
             <span className="material-icons">

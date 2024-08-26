@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Card from '../components/Card';
 
 const experienceData = [
@@ -11,18 +13,23 @@ const experienceData = [
 ];
 
 const Experience = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+  
   return (
     <section id="Experience" className="py-5">
       <div className="container">
         <h2 className="fs-5 mb-4 text-center text-md-start">Experience</h2>
         {experienceData.map((item, index) => (
-          <Card
-            key={index}
-            title={item.title}
-            subtitle={item.subtitle}
-            description={item.description}
-            date={item.date}
-          />
+          <div key={index} data-aos="fade-right">
+            <Card
+              title={item.title}
+              subtitle={item.subtitle}
+              description={item.description}
+              date={item.date}
+            />
+          </div>
         ))}
       </div>
     </section>
